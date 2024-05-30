@@ -9,11 +9,13 @@ body {
     justify-content: center;
     height: 100vh;
     background-color: #f4f4f4;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+
 }
 
 /* Style the back button */
 .back-button {
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
     font-size: 30px; /* Make the button larger */
@@ -28,9 +30,10 @@ body {
     font-size: 28px; /* Slightly reduce size on hover for effect */
 }
 
+
 /* Style the next button */
 .next-button {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     font-size: 30px; /* Make the button larger */
@@ -38,6 +41,7 @@ body {
     text-decoration: none;
     color: #333;
     transition: color 0.3s, font-size 0.3s;
+    z-index: 1000; /* Ensure it stays on top */
 }
 
 .next-button:hover {
@@ -49,18 +53,22 @@ main {
     text-align: center;
 }
 
-/* Style the navigation menu */
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
+    transform: translateY(20px); /* Push the list down initially */
+    transition: transform 5s ease-in-out; /* Smooth transition for transform */
 }
 
 nav ul li {
     margin: 15px 0;
+    text-align: justify;
+    transition: transform 5s ease-in-out; /* Smooth transition for transform */
+
 }
 
 nav ul li a {
@@ -76,7 +84,6 @@ nav ul li a:hover {
     text-decoration: none;
     font-size: 32px; /* Reduce font size on hover */
 }
-
 /* Style the main content */
 main.about {
     display: flex;
@@ -213,3 +220,126 @@ main.about {
     font-size: 16px;
 }
 
+/* Style the projects section */
+main.projects {
+    padding-top: 100px; /* Space for the back button */
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    max-width: 1200px; /* Constrain width for better readability */
+    margin: auto;
+    overflow-y:scroll;
+    scrollbar-width: none;
+    box-sizing: border-box; /* Include padding and border in width */
+}
+.projects h1 {
+    color: #333;
+    font-size: 35px;
+    margin-top: 0; /* Remove default margin */
+    font-weight: normal;
+    text-align: justify;
+}
+
+.projects h2 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    width: 100%; /* Ensure project div takes full width */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+.project-body {
+    display: flex;
+    flex-direction: row; /* Align image and description side by side */
+    align-items: flex-start; /* Align items to the top */
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.project img {
+    width: 40%; /* Ensure the image fills its container while maintaining aspect ratio */
+    height: auto;
+    object-fit: contain; /* Maintain aspect ratio */
+    margin-right: 20px;
+}
+
+.project-description {
+    font-size: 18px;
+    font-weight: 300;
+    color: #555;
+    flex: 1; /* Allow description to take up remaining space */
+    margin-top: 0; /* Remove default margin for better alignment */
+    line-height: 30px;
+}
+
+.project-title {
+    font-size: 24px;
+    font-weight: 400;
+    color: #333;
+    transition: color 0.3s;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: justify;
+    text-decoration: none;
+}
+
+.project-role {
+    font-size: 18px;
+    font-weight: 250;
+    color: #333;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    text-align: justify;
+    text-decoration: none;
+}
+
+.project-title:hover {
+    color: #555;
+}
+
+.project-date, .project-name {
+    font-size: 18px;
+    color: #777;
+    margin: 5px 0;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.contact-links a {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-links a:hover {
+    color: #a7a5a5c8;
+}
+
+.contact-logo {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    margin-right: 20px;
+}
