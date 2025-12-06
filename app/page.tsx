@@ -89,7 +89,7 @@ export default function Home() {
                 Explore My Work <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition" />
               </Link>
               <a
-                href="mailto:diasraphael31@gmail.com"
+                href="/contact"
                 className="inline-flex items-center justify-center px-8 py-5 rounded-2xl border-2 border-primary text-primary font-medium hover:bg-primary hover:text-background transition-all"
               >
                 Let’s Talk
