@@ -1,13 +1,16 @@
+// next.config.ts
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
-  basePath: process.env.NODE_ENV === "production" ? "/portfolio" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/portfolio" : "",
   images: {
-    unoptimized: true,   // ← ONLY this line. Remove the `path` line completely
+    unoptimized: true,
+    path: process.env.NODE_ENV === "production" ? "/portfolio/" : "/",
   },
+  // THIS LINE FIXES YOUR CSS/IMAGES/JS
+  assetPrefix: process.env.NODE_ENV === "production" ? "/portfolio" : "",
+  basePath: process.env.NODE_ENV === "production" ? "/portfolio" : "",
 };
 
 export default nextConfig;
