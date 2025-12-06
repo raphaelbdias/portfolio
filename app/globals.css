@@ -1,0 +1,101 @@
+/* app/globals.css – Mobile-First & Fully Responsive */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import "tailwindcss";
+
+/* === CUSTOM THEME (Tailwind v4 @theme) === */
+@theme {
+  --font-roboto: "Roboto", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-roboto);
+
+  /* Light mode */
+  --color-background: #ffffff;
+  --color-foreground: #015A84;
+  --color-primary:    #05B084;
+  --color-accent:     #BADFCD;
+
+  /* Dark mode */
+  --color-background-dark: #011F2A;
+  --color-foreground-dark: #BADFCD;
+  --color-primary-dark:    #05B084;
+  --color-accent-dark:     #05B084;
+}
+
+/* === BASE STYLES – Mobile First === */
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  body {
+    @apply font-sans bg-background text-foreground antialiased
+           min-h-screen overflow-x-hidden;
+  }
+
+  /* Prevent zoom on form inputs (iOS) */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* Better tap targets */
+  a, button, [role="button"] {
+    @apply touch-manipulation;
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* === DARK MODE (Next.js class strategy) === */
+.dark {
+  --color-background: var(--color-background-dark);
+  --color-foreground: var(--color-foreground-dark);
+  --color-primary:    var(--color-primary-dark);
+  --color-accent:     var(--color-accent-dark);
+}
+
+/* === RESPONSIVE UTILITIES === */
+@layer utilities {
+  /* Fluid typography (perfect on all screens) */
+  .text-fluid-xl   { font-size: clamp(2.5rem, 8vw, 5rem); }
+  .text-fluid-lg   { font-size: clamp(2rem, 6vw, 4rem); }
+  .text-fluid-base { font-size: clamp(1rem, 2.5vw, 1.25rem); }
+
+  /* Responsive padding/margin */
+  .px-responsive { @apply px-6 sm:px-8 lg:px-12; }
+  .py-responsive { @apply py-16 sm:py-20 lg:py-24; }
+
+  /* Safe area for notched phones */
+  .safe-padding {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* === SCROLLBAR STYLING (optional but gorgeous) === */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background/50;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/40 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/60;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  @apply bg-foreground/10;
+}
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-primary/60;
+}
