@@ -9,7 +9,7 @@ const experiences = [
   {
     title: "Decision Support Analyst",
     company: "Health Sciences North – Decision Support & Reporting",
-    logo: "/logos/hsn.png", // ← add logo path in public/logos/
+    logo: "./logos/hsn.png", // ← add logo path in public/logos/
     location: "Sudbury, ON • Ramsey Lake Health Centre",
     period: "Jul 2024 – Present",
     current: true,
@@ -22,7 +22,7 @@ const experiences = [
   {
     title: "Specialist, Program Performance Strategy",
     company: "Cambrian College",
-    logo: "/logos/cambrian-college.svg",
+    logo: "./logos/cambrian-college.svg",
     location: "Sudbury, ON",
     period: "Nov 2023 – Apr 2024",
     achievements: [
@@ -33,7 +33,7 @@ const experiences = [
   {
     title: "Research Assistant – Data Analytics",
     company: "Sofvie Inc.",
-	logo: "/logos/sofvie.svg",
+	  logo: "./logos/sofvie.svg",
     location: "Sudbury, Canada",
     period: "May 2023 – Aug 2023",
     achievements: ["Developed live KPI dashboards for mining safety and health compliance"],
@@ -48,7 +48,7 @@ const experiences = [
   {
     title: "Social Listening Analyst",
     company: "iDeas Unlimited",
-	logo: "/logos/ideasunlimited-Logo.png",
+	logo: "./logos/ideasunlimited-Logo.png",
     location: "Remote, UAE",
     period: "May 2021 – Jun 2022",
     achievements: ["Led advanced NLP initiatives for qualitative insights and introduced a Twitter pipeline for ongoing social media data analysis"],
@@ -118,7 +118,7 @@ export default function Home() {
               <div className="absolute inset-0 rounded-full bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
               <div className="w-80 h-80 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] rounded-full overflow-hidden ring-8 ring-primary/20 shadow-2xl transition-all group-hover:ring-primary/40">
                 <Image
-                  src="/raphael.jpeg"
+                  src="./raphael.jpeg"
                   alt="Raphael Dias"
                   width={1000}
                   height={1000}
