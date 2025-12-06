@@ -70,12 +70,6 @@ export default function ServicesPage() {
 
               {/* Content */}
               <div className="p-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className={`text-5xl font-bold bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
-                    {service.number}
-                  </span>
-                  <service.icon className="w-10 h-10 text-teal-400" />
-                </div>
 
                 <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                   {service.title}
