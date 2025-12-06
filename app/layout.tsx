@@ -28,7 +28,7 @@ export default function RootLayout({
         />
 
         {/* Favicon – your Silkscreen "RD" */}
-        <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+        <link rel="icon" href="./logo.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/logo.svg" />
         <meta name="theme-color" content="#05B084" />
       </head>
