@@ -4,11 +4,13 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
-  basePath: "/portfolio",
-  assetPrefix: "/portfolio/",
+
+  // These two lines are the only ones that matter now
+  basePath: "",                  // ← empty because it's root domain
+  assetPrefix: "",               // ← empty because it's root domain root
+
   images: {
     unoptimized: true,
-    path: "/portfolio/",
   },
 };
 
