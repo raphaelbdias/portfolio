@@ -9,10 +9,10 @@ export default function ServicesPage() {
       number: "01",
       title: "Web Experiences & Digital Products",
       description: "Fast, cinematic Next.js websites that feel alive. Personal brands, portfolios, landing pages, and immersive storytelling experiences.",
-      tags: ["Next.js 16", "Tailwind", "SEO-first", "Static Export"],
+      tags: ["Next.js 16", "Tailwind", "Framer Motion", "SEO-first"],
       icon: Globe,
-
       gradient: "from-teal-400 to-cyan-500",
+      bgGradient: "from-teal-900/20 to-cyan-900/10",
     },
     {
       number: "02",
@@ -21,6 +21,7 @@ export default function ServicesPage() {
       tags: ["Power BI", "SSRS", "SQL Server", "PHIPA-compliant"],
       icon: Sparkles,
       gradient: "from-emerald-400 to-teal-600",
+      bgGradient: "from-emerald-900/20 to-teal-900/10",
     },
     {
       number: "03",
@@ -29,16 +30,17 @@ export default function ServicesPage() {
       tags: ["FastAPI", "Ollama", "Chroma", "Docker"],
       icon: Brain,
       gradient: "from-purple-500 to-pink-500",
+      bgGradient: "from-purple-900/20 to-pink-900/10",
     },
   ];
 
   return (
     <section className="min-h-screen py-24 px-6 max-w-7xl mx-auto">
-      <div className="text-center mb-20">
+      <div className="text-center mb-24">
         <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-teal-400 via-emerald-400 to-cyan-500 bg-clip-text text-transparent">
           Services
         </h1>
-        <p className="mt-6 text-xl text-gray-400 max-w-2xl mx-auto">
+        <p className="mt-6 text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
           I build things that solve real problems — beautifully.
         </p>
       </div>
@@ -47,72 +49,46 @@ export default function ServicesPage() {
         {services.map((service, index) => (
           <article
             key={service.number}
-            className="group relative opacity-0 translate-y-10 animate-fade-up"
-            style={{ animationDelay: `${index * 200}ms`, animationFillMode: "forwards" }}
+            className="group relative"
           >
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition duration-700" />
-            <div className="relative bg-black/90 backdrop-blur-xl border border-gray-800 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-500">
-              
-              {/* Visual Display */}
-              <div className="h-64 relative overflow-hidden">
-                {service.number === "01" && (
-                  <div className="absolute inset-0 bg-gradient-to-br from-teal-950/50 to-cyan-900/30">
-                    <div className="grid grid-cols-4 gap-3 p-8 scale-90">
-                      {[...Array(Array(16))].map((_, i) => (
-                        <div
-                          key={i}
-                          className="aspect-square rounded-xl bg-gradient-to-br from-teal-400 to-cyan-500 opacity-80 animate-pulse"
-                          style={{ animationDelay: `${i * 100}ms` }}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                )}
-                {service.number === "02" && (
-                  <div className="p-8 space-y-5">
-                    {[88, 71, 95, 63].map((val, i) => (
-                      <div key={i} className="flex items-center gap-4">
-                        <span className="text-emerald-400 font-mono text-sm w-12">{val}%</span>
-                        <div className="flex-1 h-9 bg-gray-900 rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-gradient-to-r from-emerald-400 to-teal-500 animate-fill"
-                            style={{ animationDelay: `${i * 150}ms` }}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                    <div className="absolute top-6 right-6 text-emerald-400/70 text-6xl font-bold">98%</div>
-                  </div>
-                )}
-                {service.number === "03" && (
-                  <div className="relative h-full flex items-center justify-center">
-                    <div className="absolute w-40 h-40 border-4 border-purple-500/30 rounded-full animate-spin-slow" />
-                    <div className="absolute w-32 h-32 border-4 border-pink-500/40 rounded-full animate-spin-reverse" />
-                    <div className="absolute w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-4xl font-bold text-white">
-                      AI
-                    </div>
-                    <span className="absolute bottom-8 left-8 text-purple-300 font-mono text-sm">Local RAG Engine</span>
-                  </div>
-                )}
+            {/* Subtle hover glow */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-teal-600/20 to-emerald-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-70 transition duration-1000" />
+
+            <div className="relative bg-gray-950/80 backdrop-blur-2xl border border-gray-800/50 rounded-3xl overflow-hidden transition-all duration-500 hover:border-gray-700 hover:shadow-2xl">
+              {/* Elegant header visual */}
+              <div className={`h-48 relative overflow-hidden bg-gradient-to-br ${service.bgGradient}`}>
+                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-30">
+                  <service.icon className="w-32 h-32" />
+                </div>
+                <div className="absolute bottom-6 left-6">
+                  <span className={`text-8xl font-bold bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent opacity-30`}>
+                    {service.number}
+                  </span>
+                </div>
               </div>
 
               {/* Content */}
               <div className="p-8">
-                <div className="flex items-center gap-4 mb-4">
-                  <span className={`text-6xl font-bold bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
+                <div className="flex items-center gap-4 mb-6">
+                  <span className={`text-5xl font-bold bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
                     {service.number}
                   </span>
                   <service.icon className="w-10 h-10 text-teal-400" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
-                <p className="text-gray-400 mb-6 leading-relaxed">{service.description}</p>
+                <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
+                  {service.title}
+                </h3>
+                <p className="text-gray-400 mb-8 leading-relaxed">
+                  {service.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2">
                   {service.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-xs font-medium bg-gray-900/80 border border-gray-700 rounded-full text-gray-300"
+                      className="px-4 py-2 text-xs font-medium bg-gray-900/70 border border-gray-800 rounded-full text-gray-300 transition hover:bg-gray-800/80"
                     >
                       {tag}
                     </span>
@@ -124,47 +100,31 @@ export default function ServicesPage() {
         ))}
       </div>
 
-      <div className="text-center mt-24">
+      <div className="text-center mt-32">
         <p className="text-gray-400 text-lg">
           Ready to build something real?{" "}
-          <a href="/contact" className="text-teal-400 hover:text-teal-300 underline decoration-dashed">
+          <a href="/contact" className="text-teal-400 hover:text-teal-300 underline decoration-dashed underline-offset-4 transition">
             Let's talk
           </a>
         </p>
       </div>
 
-      {/* Pure CSS animations — works perfectly with static export */}
+      {/* Gentle fade-in on load */}
       <style jsx global>{`
-        @keyframes fade-up {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
-          }
+        article {
+          opacity: 0;
+          transform: translateY(40px);
+          animation: fadeUp 0.9s ease-out forwards;
+        }
+        article:nth-child(1) { animation-delay: 0.1s; }
+        article:nth-child(2) { animation-delay: 0.3s; }
+        article:nth-child(3) { animation-delay: 0.5s; }
+
+        @keyframes fadeUp {
           to {
             opacity: 1;
             transform: translateY(0);
           }
-        }
-        .animate-fade-up {
-          animation: fade-up 0.9s ease-out forwards;
-        }
-        @keyframes fill {
-          from { width: 0; }
-          to { width: 100%; }
-        }
-        .animate-fill {
-          animation: fill 1.6s ease-out forwards;
-          width: 0;
-        }
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 22s linear infinite;
-        }
-        .animate-spin-reverse {
-          animation: spin-slow 18s linear infinite reverse;
         }
       `}</style>
     </section>
