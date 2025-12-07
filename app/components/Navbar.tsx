@@ -62,8 +62,6 @@ export default function Navbar() {
 
         {/* MOBILE RIGHT CONTROLS */}
         <div className="flex items-center gap-4 md:hidden">
-          {/* Dark Mode Toggle */}
-          <ThemeToggle />  
           {/* Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
