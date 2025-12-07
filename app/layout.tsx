@@ -34,7 +34,6 @@ export default function RootLayout({
       </head>
 
       <body className={`${inter.variable} font-sans antialiased bg-background text-foreground`}>
-        <ThemeToggle />
         {children}
       </body>
     </html>

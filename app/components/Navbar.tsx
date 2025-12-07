@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-// import ThemeToggle from "@/components/ThemeToggle"; // <-- add your toggle import
+import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -35,6 +35,7 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
+          <ThemeToggle />
           {navItems.map((item) => (
             <Link
               key={item.name}
@@ -62,8 +63,7 @@ export default function Navbar() {
         {/* MOBILE RIGHT CONTROLS */}
         <div className="flex items-center gap-4 md:hidden">
           {/* Dark Mode Toggle */}
-          {/* <ThemeToggle /> */}  {/* ← insert your toggle here */}
-
+          <ThemeToggle />  
           {/* Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
