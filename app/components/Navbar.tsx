@@ -59,13 +59,14 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Hamburger */}
+        {/* Mobile Hamburger (TEMP DEBUG VISUAL) */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-primary focus:outline-none"
-          aria-label="Toggle menu"
+          className="md:hidden text-red-600 bg-yellow-200 p-2 rounded z-[999]"
         >
-          {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+          {mobileOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
         </button>
+
       </nav>
 
       {/* Mobile Menu */}
