@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+// import ThemeToggle from "@/components/ThemeToggle"; // <-- add your toggle import
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -58,15 +59,20 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Hamburger */}
-        {/* Mobile Hamburger (TEMP DEBUG VISUAL) */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-red-600 bg-yellow-200 p-2 rounded z-[999]"
-        >
-          {mobileOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
-        </button>
+        {/* MOBILE RIGHT CONTROLS */}
+        <div className="flex items-center gap-4 md:hidden">
+          {/* Dark Mode Toggle */}
+          {/* <ThemeToggle /> */}  {/* ← insert your toggle here */}
 
+          {/* Hamburger */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="text-primary focus:outline-none z-[999]"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
