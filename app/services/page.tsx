@@ -1,7 +1,7 @@
 // app/services/page.tsx
 "use client";
-
-import { Sparkles, Brain, Globe } from "lucide-react";
+import { ArrowLeft,  Sparkles, Brain, Globe } from "lucide-react";
+import Link from "next/link";
 
 export default function ServicesPage() {
   const services = [
@@ -37,6 +37,12 @@ export default function ServicesPage() {
   return (
     <section className="min-h-screen py-24 px-6 max-w-7xl mx-auto">
       <div className="text-center mb-24">
+        <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-primary hover:underline mb-8"
+            >
+              <ArrowLeft className="w-5 h-5" /> Back to home
+            </Link>
         <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-teal-400 via-emerald-400 to-cyan-500 bg-clip-text text-transparent">
           Services
         </h1>
