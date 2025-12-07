@@ -9,18 +9,18 @@ import { useState } from "react";
 // Move metadata to a separate server component file (recommended) OR remove it completely
 // Option 1: Create app/gallery/layout.tsx (recommended)
 const photos = [
-  { src: "./gallery/10.jpg", alt: "Analytics brainstorm session", year: "2023" },
-  { src: "./gallery/8.jpg", alt: "Late night data analytics session", year: "2023" },
-  { src: "./gallery/2.jpeg", alt: "Presenting at Mohawk College Hamilton", year: "2024" },
-  { src: "./gallery/7.jpg", alt: "Best poster @ Mohawk HEAD Competition", year: "2023" },
-  { src: "./gallery/12.jpg", alt: "My work station as a student data analyst @ Cambrian College", year: "2024" },
-  { src: "./gallery/1.jpeg", alt: "Winning 3rd place at Côté Gold BlastCaptain Hackathon", year: "2024" },
-  { src: "./gallery/3.jpg", alt: "Analytics Poster Exhibition - Representing Cambrian College", year: "2024" },
-  { src: "./gallery/4.jpg", alt: "GDG Sudbury event - Laurentian University", year: "2024" },
-  { src: "./gallery/5.jpg", alt: "GDG LLM Keynote event - Laurentian University", year: "2024" },
-  { src: "./gallery/6.jpg", alt: "Delivering presentation at HEAD Competition - Hamilton", year: "2024" },
-  { src: "./gallery/11.jpg", alt: "Côté Gold Open Pit Mine tour", year: "2025" },
-  { src: "./gallery/9.jpg", alt: "Home office desksetup upgrade", year: "2025" },
+  { src: "/gallery/10.jpg", alt: "Analytics brainstorm session", year: "2023" },
+  { src: "/gallery/8.jpg", alt: "Late night data analytics session", year: "2023" },
+  { src: "/gallery/2.jpeg", alt: "Presenting at Mohawk College Hamilton", year: "2024" },
+  { src: "/gallery/7.jpg", alt: "Best poster @ Mohawk HEAD Competition", year: "2023" },
+  { src: "/gallery/12.jpg", alt: "My work station as a student data analyst @ Cambrian College", year: "2024" },
+  { src: "/gallery/1.jpeg", alt: "Winning 3rd place at Côté Gold BlastCaptain Hackathon", year: "2024" },
+  { src: "/gallery/3.jpg", alt: "Analytics Poster Exhibition - Representing Cambrian College", year: "2024" },
+  { src: "/gallery/4.jpg", alt: "GDG Sudbury event - Laurentian University", year: "2024" },
+  { src: "/gallery/5.jpg", alt: "GDG LLM Keynote event - Laurentian University", year: "2024" },
+  { src: "/gallery/6.jpg", alt: "Delivering presentation at HEAD Competition - Hamilton", year: "2024" },
+  { src: "/gallery/11.jpg", alt: "Côté Gold Open Pit Mine tour", year: "2025" },
+  { src: "/gallery/9.jpg", alt: "Home office desksetup upgrade", year: "2025" },
 
 ];
 
