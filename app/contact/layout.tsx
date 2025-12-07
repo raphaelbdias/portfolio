@@ -1,6 +1,6 @@
 // app/contact/layout.tsx
 import { Metadata } from "next";
-import "./globals.css";
+
 
 export const metadata: Metadata = {
   title: "Contact • Raphael Dias",
