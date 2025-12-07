@@ -92,11 +92,11 @@ export default function Contact() {
                   <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition"><Mail className="w-6 h-6" /></div>
                   <div><p className="font-medium">Email</p><p className="text-foreground/70">diasraphael31@gmail.com</p></div>
                 </a>
-                <a href="https://linkedin.com/in/diasraphael" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-foreground hover:text-primary transition group">
+                <a href="https://www.linkedin.com/in/diasraphael" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-foreground hover:text-primary transition group">
                   <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition"><Linkedin className="w-6 h-6" /></div>
                   <div><p className="font-medium">LinkedIn</p><p className="text-foreground/70">linkedin.com/in/diasraphael</p></div>
                 </a>
-                <a href="https://github.com/raphaelbdias" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-foreground hover:text-primary transition group">
+                <a href="https://www.github.com/raphaelbdias" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-foreground hover:text-primary transition group">
                   <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition"><Github className="w-6 h-6" /></div>
                   <div><p className="font-medium">GitHub</p><p className="text-foreground/70">github.com/raphaelbdias</p></div>
                 </a>

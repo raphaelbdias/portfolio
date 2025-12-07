@@ -22,6 +22,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-primary/10 bg-background/80 backdrop-blur-lg">
       <nav className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        
         {/* Logo */}
         <Link
           href="/"
@@ -38,7 +39,8 @@ export default function Navbar() {
               key={item.name}
               href={item.href}
               className={`font-medium transition-colors hover:text-primary ${
-                pathname === item.href || (item.href === "#experience" && pathname === "/")
+                pathname === item.href ||
+                (item.href === "#experience" && pathname === "/")
                   ? "text-primary"
                   : "text-foreground/70"
               }`}
@@ -46,6 +48,7 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
+
           <a
             href="/Raphael-Dias-Resume.pdf"
             download
@@ -55,39 +58,43 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-primary"
+          className="md:hidden text-primary focus:outline-none"
+          aria-label="Toggle menu"
         >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </button>
       </nav>
 
       {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="md:hidden border-t border-primary/10 bg-background/95 backdrop-blur-lg">
-          <div className="px-6 py-8 space-y-6">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => setMobileOpen(false)}
-                className="block text-xl font-medium text-foreground/80 hover:text-primary transition"
-              >
-                {item.name}
-              </Link>
-            ))}
-            <a
-              href="/Raphael-Dias-Resume.pdf"
-              download
-              className="block w-full text-center py-3 rounded-full bg-primary text-background font-medium"
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ${
+          mobileOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        } bg-background/95 backdrop-blur-lg border-t border-primary/10`}
+      >
+        <div className="px-6 py-8 space-y-6">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              onClick={() => setMobileOpen(false)}
+              className="block text-xl font-medium text-foreground/80 hover:text-primary transition"
             >
-              Download Resume
-            </a>
-          </div>
+              {item.name}
+            </Link>
+          ))}
+
+          <a
+            href="/Raphael-Dias-Resume.pdf"
+            download
+            className="block w-full text-center py-3 rounded-full bg-primary text-background font-medium"
+          >
+            Download Resume
+          </a>
         </div>
-      )}
+      </div>
     </header>
   );
 }
