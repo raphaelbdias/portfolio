@@ -2,11 +2,6 @@
 import { ArrowLeft, ExternalLink, Github, Download } from "lucide-react";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Projects • Raphael Dias",
-  description: "Data analytics, ELT pipelines, computer vision, and dashboard projects",
-};
-
 const projects = [
   {
     title: "VectorHealth - AI-Powered OHRS Assistant",
