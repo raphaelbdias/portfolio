@@ -60,7 +60,7 @@ export default function ProjectsPage() {
             className="inline-flex items-center gap-3 px-6 py-4 rounded-full bg-primary text-background font-medium hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:scale-105"
           >
             <Download className="w-5 h-5" />
-            Download Resume (PDF)
+            Download Resume
           </a>
         </div>
 

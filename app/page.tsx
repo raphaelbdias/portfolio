@@ -20,7 +20,7 @@ const experiences = [
     ],
   },
   {
-    title: "Specialist, Program Performance Strategy",
+    title: "Student Intern, Program Performance Strategy",
     company: "Cambrian College",
     logo: "./logos/cambrian-college.svg",
     location: "Sudbury, ON",
@@ -39,19 +39,19 @@ const experiences = [
     achievements: ["Developed live KPI dashboards for mining safety and health compliance"],
   },
   {
-    title: "Software Developer",
+    title: "Medical Health Software Implementer",
     company: "NorthStarDoc",
     location: "Remote, USA",
     period: "Jun 2022 – Aug 2022",
     achievements: ["Implemented Selenium-based automation to streamline profile creation while overseeing multi-region facility data migration, boosting conversions through referral data insights."],
   },
   {
-    title: "Social Listening Analyst",
+    title: "Market Research Support Executive",
     company: "iDeas Unlimited",
 	logo: "./logos/ideasunlimited-Logo.png",
     location: "Remote, UAE",
     period: "May 2021 – Jun 2022",
-    achievements: ["Led advanced NLP initiatives for qualitative insights and introduced a Twitter pipeline for ongoing social media data analysis"],
+    achievements: ["Led market research initiatives for qualitative insights and introduced a Twitter pipeline for ongoing social media data analysis"],
   },
 ];
 
