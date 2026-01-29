@@ -3,6 +3,15 @@ import { ArrowLeft, ExternalLink, Github, Download } from "lucide-react";
 import Link from "next/link";
 
 const projects = [
+    {
+    title: "Market Research for US transportation Management Systems",
+    company: "Independent Publication",
+    period: "2024",
+    description:
+      "The goal of this research is to explore the US Transportation Management Systems (TMS) market to provide industry professionals with insights for informed decision-making and understanding TMS's transformative impact on logistics and transportation.",
+    stack: ["Market Research", "Reporting", "Data Analysis"],
+    link: "/TMS US Report v6.pdf",
+  },
   {
     title: "VectorHealth - AI-Powered OHRS Assistant",
     company: "Personal Project",
