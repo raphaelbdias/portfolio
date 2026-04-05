@@ -5,6 +5,7 @@ import { ArrowRight, ExternalLink, Github, Linkedin, Mail } from "lucide-react";
 import ExperienceTimeline from "./components/ExperienceTimeline";
 import ProjectCard from "./components/ProjectCard";
 import TopNav from "./components/TopNav";
+import AnimatedBulletList from "./components/AnimatedBulletList";
 import {
   education,
   experiences,
@@ -153,11 +154,7 @@ export default function Home() {
               <h3 className="text-sm font-semibold uppercase tracking-[0.08em] text-[var(--text)]">
                 {group.name}
               </h3>
-              <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
-                {group.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              <AnimatedBulletList items={group.items} className="!mt-4" />
             </article>
           ))}
         </div>

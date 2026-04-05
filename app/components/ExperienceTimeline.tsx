@@ -1,4 +1,5 @@
 import type { ExperienceItem } from "./portfolioData";
+import AnimatedBulletList from "./AnimatedBulletList";
 
 type ExperienceTimelineProps = {
   items: ExperienceItem[];
@@ -20,11 +21,7 @@ export default function ExperienceTimeline({ items }: ExperienceTimelineProps) {
                 {item.period}
               </p>
             </div>
-            <ul className="space-y-2 text-sm leading-relaxed text-[var(--muted)]">
-              {item.impact.map((point) => (
-                <li key={point}>- {point}</li>
-              ))}
-            </ul>
+            <AnimatedBulletList items={item.impact} className="!mt-2" />
           </div>
         </li>
       ))}

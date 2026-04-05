@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
+import AnimatedBulletList from "../components/AnimatedBulletList";
 import { serviceTiers } from "../components/portfolioData";
 
 export default function ServicesPage() {
@@ -46,11 +47,7 @@ export default function ServicesPage() {
               <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-[var(--text)]">
                 Includes
               </h3>
-              <ul className="mt-3 space-y-2 text-sm text-[var(--muted)]">
-                {tier.includes.map((item) => (
-                  <li key={item}>- {item}</li>
-                ))}
-              </ul>
+              <AnimatedBulletList items={tier.includes} />
             </div>
 
             <div className="mt-6">
