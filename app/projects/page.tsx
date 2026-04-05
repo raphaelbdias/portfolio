@@ -1,117 +1,35 @@
-// app/projects/page.tsx
-import { ArrowLeft, ExternalLink, Github, Download } from "lucide-react";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
-const projects = [
-    {
-    title: "Market Research for US transportation Management Systems",
-    company: "Independent Publication",
-    period: "2024",
-    description:
-      "The goal of this research is to explore the US Transportation Management Systems (TMS) market to provide industry professionals with insights for informed decision-making and understanding TMS's transformative impact on logistics and transportation.",
-    stack: ["Market Research", "Reporting", "Data Analysis"],
-    link: "/TMS US Report v6.pdf",
-  },
-  {
-    title: "VectorHealth - AI-Powered OHRS Assistant",
-    company: "Personal Project",
-    period: "2025",
-    description:
-      "An OHRS Assistant that helps Ontario hospitals, LTC homes, community health centers, and reporting teams interpret the OHRS Appendix A–D v12.0 standards with citation-backed answers.",
-    stack: ["Python", "Ollama","FastAPI on backend", "TypeScript", "Next.js on frontend"],
-    link: "https://github.com/raphaelbdias/VectorHealth",
-  },
-  {
-    title: "Climate Risk & Facility Maintenance",
-    company: "City of Hamilton • Mohawk College",
-    period: "2024",
-    description:
-      "A simple, lightweight command-line weather app that shows current conditions and a 5-day forecast specifically for Hamilton, Ontario, Canada.",
-    stack: ["Python", "Streamlit", "Predictive Analytics", "Climate Data"],
-    link: "https://github.com/raphaelbdias/Weather-Hamilton",
-  }
-];
+import ProjectCard from "../components/ProjectCard";
+import { projects } from "../components/portfolioData";
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen py-24 px-6">
-      <div className="max-w-5xl mx-auto">
-        {/* Header */}
-        <div className="mb-16">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-primary hover:underline mb-8"
-          >
-            <ArrowLeft className="w-5 h-5" /> Back to home
-          </Link>
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-            All <span className="text-primary">Projects</span>
-          </h1>
-          <p className="text-xl text-foreground/70 mt-4">
-            Real impact through data, automation, and visualization.
-          </p>
-        </div>
+    <main className="section !pt-16 sm:!pt-20">
+      <Link
+        href="/"
+        className="inline-flex items-center gap-2 text-sm text-[var(--accent)] transition hover:underline"
+      >
+        <ArrowLeft size={16} /> Back to home
+      </Link>
 
-        {/* Download Resume Button */}
-        <div className="mb-12">
-          <a
-            href="/Raphael-Dias-Resume.docx"
-            download
-            className="inline-flex items-center gap-3 px-6 py-4 rounded-full bg-primary text-background font-medium hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:scale-105"
-          >
-            <Download className="w-5 h-5" />
-            Download Resume
-          </a>
-        </div>
+      <header className="mt-8 max-w-3xl">
+        <p className="section-kicker">Projects</p>
+        <h1 className="text-4xl font-semibold tracking-[-0.03em] sm:text-5xl">
+          Selected analytics and reporting work
+        </h1>
+        <p className="mt-4 text-base leading-relaxed text-[var(--muted)]">
+          Detailed case-study previews focused on problem framing, practical tooling,
+          and decision-support outcomes.
+        </p>
+      </header>
 
-        {/* Projects Grid */}
-        <div className="grid gap-8">
-          {projects.map((proj) => (
-            <div
-              key={proj.title}
-              className="group rounded-2xl border border-primary/10 bg-background p-8 hover:border-primary/30 hover:shadow-2xl transition-all"
-            >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                <div className="flex-1">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-bold group-hover:text-primary transition">
-                      {proj.title}
-                    </h3>
-                  </div>
-                  <p className="text-foreground/60 text-sm mb-4">
-                    {proj.company} • {proj.period}
-                  </p>
-                  <p className="text-foreground/80 leading-relaxed">
-                    {proj.description}
-                  </p>
-                </div>
-
-                {proj.link && (
-                  <a
-                    href={proj.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-primary hover:text-primary/80 transition mt-4 md:mt-0"
-                  >
-                    View Code <ExternalLink className="w-4 h-4" />
-                  </a>
-                )}
-              </div>
-
-              <div className="flex flex-wrap gap-2 mt-6">
-                {proj.stack.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+      <section className="mt-10 grid gap-5 md:grid-cols-2">
+        {projects.map((project) => (
+          <ProjectCard key={project.slug} project={project} />
+        ))}
+      </section>
+    </main>
   );
 }
