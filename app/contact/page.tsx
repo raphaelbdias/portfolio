@@ -16,7 +16,7 @@ export default function Contact() {
             ← Back to home
           </Link>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-            Let's <span className="text-primary">Connect</span>
+            Let&apos;s <span className="text-primary">Connect</span>
           </h1>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
             Currently open to collaborating on projects around data and software. Feel free to reach out for opportunities, questions, or just to say hi!
@@ -29,7 +29,7 @@ export default function Contact() {
             {state.succeeded ? (
               <div className="rounded-2xl bg-background p-8 shadow-lg text-center">
                 <h3 className="text-2xl font-bold text-primary mb-2">Message sent — thank you!</h3>
-                <p className="text-foreground/70">I'll reply within 24 hours.</p>
+                <p className="text-foreground/70">I&apos;ll reply within 24 hours.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -67,7 +67,7 @@ export default function Contact() {
                     required
                     rows={6}
                     className="w-full px-4 py-3 rounded-xl bg-foreground/5 border border-primary/20 focus:border-primary focus:outline-none transition resize-none"
-                    placeholder="Hi Raphael, I'd love to chat about..."
+                    placeholder="Hi Raphael, I would love to chat about..."
                   />
                   <ValidationError prefix="Message" field="message" errors={state.errors} />
                 </div>
