@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, raphael ]
   workflow_dispatch:
 
 permissions:
@@ -36,6 +36,9 @@ jobs:
 
       - name: Build (creates ./out automatically)
         run: npm run build
+
+      - name: Ensure GitHub Pages static compatibility
+        run: touch out/.nojekyll
 
       - name: Verify out folder
         run: ls -R out | head -20
